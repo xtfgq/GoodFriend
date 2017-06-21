@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="edit_color">#006400</color>
+    <color name="red">#FF0000</color><!--红色 -->
+
+    <color name="colorPrimary">@color/actionbar_color</color>
+    <color name="colorPrimaryDark">@color/actionbar_color</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="actionbar_color">#00c07d</color>
+
+    <color name="transparent">#00000000</color>
+
+    <color name="white">#ffffff</color>
+</resources>
