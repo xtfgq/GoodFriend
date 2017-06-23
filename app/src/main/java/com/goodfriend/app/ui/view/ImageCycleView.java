@@ -25,20 +25,10 @@ public class ImageCycleView extends LinearLayout {
     private Context mContext;
     private ViewPager mAdvPager = null;
     private ImageCycleAdapter mAdvAdapter;
-
-
     private ViewGroup mGroup;
-
-
     private ImageView mImageView = null;
-
-
     private ImageView[] mImageViews = null;
-
-
     private int mImageIndex = 0;
-
-
     private float mScale;
 
     /**
@@ -93,7 +83,6 @@ public class ImageCycleView extends LinearLayout {
             int imageParams = (int) (mScale * 10 + 0.5f);
             int imagePadding = (int) (mScale * 5 + 0.5f);
             mImageView.setLayoutParams(new LayoutParams(imageParams, imageParams));
-//			mImageView.setPadding(0, imagePadding, 0, imagePadding);
             mImageViews[i] = mImageView;
             mImageView.setScaleType(ScaleType.FIT_XY);
             if (i == 0) {
@@ -258,11 +247,6 @@ public class ImageCycleView extends LinearLayout {
                     mImageCycleViewListener.onImageClick(position, v, mObject);
                 }
             });
-
-//            imageView.setTag(imageUrl);
-//            LinearLayout ll=new LinearLayout(mContext);
-//            ll.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT));
-//            ll.
             container.addView(imageView);
             try {
                 mImageCycleViewListener.displayImage(imageUrl, imageView);

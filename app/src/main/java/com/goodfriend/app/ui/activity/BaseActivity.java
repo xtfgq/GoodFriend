@@ -1,15 +1,22 @@
 package com.goodfriend.app.ui.activity;
 
 import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 
 import com.goodfriend.app.common.CustomApplcation;
+import com.goodfriend.app.common.PermissionsResultListener;
 import com.goodfriend.app.utils.SystemStatusManager;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.ButterKnife;
 
@@ -18,6 +25,7 @@ import butterknife.ButterKnife;
  */
 
 public abstract class BaseActivity extends BaseAppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,4 +44,6 @@ public abstract class BaseActivity extends BaseAppCompatActivity {
             parentView.setFitsSystemWindows(true);
         }
     }
+
+
 }

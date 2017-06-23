@@ -1,15 +1,19 @@
 package com.goodfriend.app.ui.activity;
 
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.goodfriend.R;
+import com.goodfriend.app.common.PermissionsResultListener;
 import com.goodfriend.app.ui.view.ImageCycleView;
 import com.goodfriend.app.utils.ScreenUtils;
 
@@ -33,13 +37,10 @@ public class MainActivity extends BaseToolBarActvity {
     ArrayList<Map<String, Object>> mObject = null;
     @BindView(R.id.tv_search_bg)
     TextView tvSearchBg;
-
     @BindView(R.id.activity_ele_search)
     LinearLayout activityEleSearch;
     @BindView(R.id.viewPager)
     ImageCycleView viewPager;
-
-
     @Override
     protected int getColorId() {
         return R.color.red;
@@ -48,6 +49,7 @@ public class MainActivity extends BaseToolBarActvity {
     @Override
     public void initView() {
         setToolbarTitleTv("xxx");
+        getPermisson();
         mImageUrl=new ArrayList<String>();
         mImageUrl.add("http://ehome.staging.topmd.cn:81/" +
                 "ueditor/net/upload/image/20160926/6361050831635160295248500.jpg");
@@ -93,4 +95,26 @@ public class MainActivity extends BaseToolBarActvity {
     public int getContentViewID() {
         return R.layout.activity_main;
     }
+    private void getPermisson(){
+        checkPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                Manifest.permission.CALL_PHONE, Manifest.permission.CAMERA,}, 300,
+                new PermissionsResultListener() {
+            @Override
+            public void onSuccessful(int[] grantResults) {
+                for (int i = 0; i < grantResults.length; i++) {
+                    if (grantResults[i] == PackageManager.PERMISSION_GRANTED) {
+                        Toast.makeText(MainActivity.this, "同意权限", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(MainActivity.this, "拒绝权限", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure() {
+                Toast.makeText(MainActivity.this, "失败", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
 }
