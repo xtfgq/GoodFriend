@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/GoodFriend-master.iml" filepath="$PROJECT_DIR$/GoodFriend-master.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/autolayout/autolayout.iml" filepath="$PROJECT_DIR$/autolayout/autolayout.iml" />
+      <module fileurl="file://$PROJECT_DIR$/autolayout-annotations/autolayout-annotations.iml" filepath="$PROJECT_DIR$/autolayout-annotations/autolayout-annotations.iml" />
     </modules>
   </component>
 </project>

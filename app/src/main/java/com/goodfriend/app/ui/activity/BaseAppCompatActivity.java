@@ -19,10 +19,13 @@ import com.goodfriend.app.ui.view.BaseView;
 import com.goodfriend.app.utils.SystemStatusManager;
 import java.util.ArrayList;
 import java.util.List;
+
+import im.quar.autolayout.AutoLayoutActivity;
+
 /**
  * Created by guoqiang on 2017/6/20.
  */
-public abstract class BaseAppCompatActivity<T extends BasePresenter> extends AppCompatActivity
+public abstract class BaseAppCompatActivity<T extends BasePresenter> extends AutoLayoutActivity
 implements BaseView{
     private SparseArray<View> mViews;
     protected T mPresenter;

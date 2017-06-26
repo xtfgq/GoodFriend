@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:background="#0096FF"
-        android:padding="10dp">
+        android:padding="20px">
 
         <TextView
             android:id="@+id/tv_search_bg"
@@ -19,7 +19,7 @@
             android:layout_gravity="center"
             android:background="@drawable/ele_search_bg"
             android:gravity="center"
-            android:padding="10dp" />
+            android:padding="20px" />
 
 
         <TextView
@@ -30,6 +30,7 @@
             android:text="搜索商家、商品名称" />
 
     </FrameLayout>
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -38,17 +39,18 @@
         <com.goodfriend.app.ui.view.ImageCycleView
             android:id="@+id/viewPager"
             android:layout_width="match_parent"
-            android:layout_height="140dp"
+            android:layout_height="280px"
 
-             />
+            />
     </FrameLayout>
+
     <LinearLayout
         android:id="@+id/llone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
-        android:layout_marginLeft="12dp"
-        android:layout_marginRight="12dp"
+        android:layout_marginLeft="24px"
+        android:layout_marginRight="24px"
         android:orientation="vertical">
 
         <LinearLayout
@@ -83,7 +85,7 @@
                     android:gravity="center"
                     android:text="注冊登录"
                     android:textColor="@color/red"
-                    android:textSize="14sp" />
+                    android:textSize="28px" />
             </LinearLayout>
 
             <LinearLayout
@@ -115,7 +117,7 @@
                     android:gravity="center"
                     android:text="远程排号"
                     android:textColor="@color/red"
-                    android:textSize="14sp" />
+                    android:textSize="28px" />
             </LinearLayout>
 
             <LinearLayout
@@ -148,18 +150,19 @@
                     android:gravity="center"
                     android:text="政策规定"
                     android:textColor="@color/red"
-                    android:textSize="14sp" />
+                    android:textSize="28px" />
             </LinearLayout>
 
 
         </LinearLayout>
+
         <LinearLayout
 
             android:id="@+id/lltwo"
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-android:layout_marginTop="15dp"
+            android:layout_marginTop="15dp"
 
             android:orientation="horizontal">
 
@@ -181,7 +184,7 @@ android:layout_marginTop="15dp"
                     android:gravity="center"
 
 
-                    android:textSize="14sp" />
+                    android:textSize="28px" />
 
                 <TextView
                     android:id="@+id/tv_consult"
@@ -212,7 +215,7 @@ android:layout_marginTop="15dp"
                     android:background="@mipmap/icon_record"
                     android:gravity="center"
 
-                    android:textSize="14sp" />
+                    />
 
                 <TextView
                     android:id="@+id/tv_notice"
@@ -222,8 +225,8 @@ android:layout_marginTop="15dp"
                     android:layout_marginTop="5dp"
                     android:gravity="center"
                     android:text="本库公告"
-                    android:textSize="14sp"
-                    android:textColor="@color/red" />
+                    android:textColor="@color/red"
+                    android:textSize="28px" />
             </LinearLayout>
 
             <LinearLayout
@@ -242,7 +245,7 @@ android:layout_marginTop="15dp"
                     android:background="@mipmap/icon_record"
                     android:gravity="center"
 
-                     />
+                    />
 
                 <TextView
                     android:id="@+id/tv_black"
@@ -253,14 +256,12 @@ android:layout_marginTop="15dp"
                     android:gravity="center"
                     android:text="黑名单"
                     android:textColor="@color/red"
-                    android:textSize="14sp" />
+                    android:textSize="28px" />
             </LinearLayout>
         </LinearLayout>
 
 
-
-
-            </LinearLayout>
+    </LinearLayout>
 
 
 </LinearLayout>
