@@ -13,6 +13,7 @@ import android.view.WindowManager;
 
 import com.goodfriend.app.common.CustomApplcation;
 import com.goodfriend.app.common.PermissionsResultListener;
+import com.goodfriend.app.ui.presenter.BasePresenter;
 import com.goodfriend.app.utils.SystemStatusManager;
 
 import java.util.ArrayList;
@@ -24,7 +25,7 @@ import butterknife.ButterKnife;
  * Created by guoqiang on 2017/6/22.
  */
 
-public abstract class BaseActivity extends BaseAppCompatActivity {
+public abstract class BaseActivity<T extends BasePresenter> extends BaseAppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +34,10 @@ public abstract class BaseActivity extends BaseAppCompatActivity {
         ButterKnife.bind(this);
         doSetFitsSystemWindows();
         initView();
+        if(getmPresenter()!=null) {
+            getmPresenter().onCreate();
+            getmPresenter().loadData();
+        }
     }
 
     protected abstract int getLayoutId();

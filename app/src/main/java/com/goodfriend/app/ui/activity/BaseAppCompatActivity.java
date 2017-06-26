@@ -1,5 +1,6 @@
 package com.goodfriend.app.ui.activity;
 
+import android.content.Context;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
@@ -7,19 +8,24 @@ import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.util.SparseArray;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import com.goodfriend.app.common.CustomApplcation;
 import com.goodfriend.app.common.PermissionsResultListener;
+import com.goodfriend.app.ui.presenter.BasePresenter;
+import com.goodfriend.app.ui.view.BaseView;
 import com.goodfriend.app.utils.SystemStatusManager;
 import java.util.ArrayList;
 import java.util.List;
-
-
 /**
  * Created by guoqiang on 2017/6/20.
  */
-public abstract class BaseAppCompatActivity extends AppCompatActivity {
+public abstract class BaseAppCompatActivity<T extends BasePresenter> extends AppCompatActivity
+implements BaseView{
+    private SparseArray<View> mViews;
+    protected T mPresenter;
     private PermissionsResultListener mListener;
     private int mRequestCode;
     private List<String> mListPermissions = new ArrayList<>();
@@ -27,13 +33,22 @@ public abstract class BaseAppCompatActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         doBeforeSetcontentView();
+        mViews = new SparseArray<>();
+        //创建presenter
+        mPresenter = initPresenter();
+        if(mPresenter!=null)
+        mPresenter.onAttch(this);
     }
     protected abstract int getColorId();
     @Override
     protected void onDestroy() {
         super.onDestroy();
+       if(mPresenter!=null)
+        mPresenter.onDestroy();
+        mViews.remove(mViews.size()-1);
         CustomApplcation.getInstance().finishSingleActivity(this);
     }
+
 
     private void doBeforeSetcontentView() {
         CustomApplcation.getInstance().addActivity(this);
@@ -98,6 +113,12 @@ public abstract class BaseAppCompatActivity extends AppCompatActivity {
             ActivityCompat.requestPermissions(this, mListPermissions.toArray(new String[size]), mRequestCode);
         }
     }
-
-
+    protected abstract T initPresenter();
+    @Override
+    public Context getContext() {
+        return this;
+    }
+    public T getmPresenter() {
+        return mPresenter;
+    }
 }

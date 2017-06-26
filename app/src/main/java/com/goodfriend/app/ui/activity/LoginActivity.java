@@ -1,5 +1,6 @@
 package com.goodfriend.app.ui.activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.view.View;
 import android.widget.EditText;
@@ -7,11 +8,12 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.goodfriend.R;
+import com.goodfriend.app.ui.presenter.BasePresenter;
 
 import butterknife.BindView;
 import butterknife.OnClick;
 
-public class LoginActivity extends BaseActivity {
+public class LoginActivity extends BaseActivity<BasePresenter> {
     @BindView(R.id.editPhone)
     EditText editPhone;
     @BindView(R.id.rlaccount)
@@ -36,6 +38,11 @@ public class LoginActivity extends BaseActivity {
     }
 
     @Override
+    protected BasePresenter initPresenter() {
+        return null;
+    }
+
+    @Override
     public void initView() {
 
     }
@@ -54,6 +61,7 @@ public class LoginActivity extends BaseActivity {
                 break;
         }
     }
+
 
 
 }

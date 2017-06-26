@@ -2,9 +2,8 @@ package com.goodfriend.app.ui.activity;
 
 
 import android.Manifest;
+import android.content.Context;
 import android.content.pm.PackageManager;
-import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,39 +15,33 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.goodfriend.R;
 import com.goodfriend.app.common.PermissionsResultListener;
+import com.goodfriend.app.ui.contract.SignDoctorContract;
+import com.goodfriend.app.ui.presenter.BasePresenter;
+import com.goodfriend.app.ui.presenter.SignDoctorPresenterImpl;
 import com.goodfriend.app.ui.view.ImageCycleView;
 import com.goodfriend.app.utils.HttpMethods;
-import com.goodfriend.app.utils.HttpMethods.onRequestCallBack;
 import com.goodfriend.app.utils.Node;
-import com.goodfriend.app.utils.ResultObserver;
+
 import com.goodfriend.app.utils.ScreenUtils;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
-import io.reactivex.Observer;
-import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.disposables.Disposable;
 
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 import okhttp3.ResponseBody;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 /**
  * Created by guoqiang on 2017/6/20.
  */
 
-public class MainActivity extends BaseToolBarActvity {
+public class MainActivity extends BaseToolBarActvity <SignDoctorPresenterImpl>implements
+        SignDoctorContract.View{
     //广告轮播 图片链接
     ArrayList<String> mImageUrl = null;
     //广告通用对象
@@ -65,10 +58,15 @@ public class MainActivity extends BaseToolBarActvity {
     }
 
     @Override
+    protected BasePresenter initPresenter() {
+        return new SignDoctorPresenterImpl();
+    }
+
+    @Override
     public void initView() {
         setToolbarTitleTv("xxx");
         getPermisson();
-        getData();
+//        getData();
         mImageUrl=new ArrayList<String>();
         mImageUrl.add("http://ehome.staging.topmd.cn:81/" +
                 "ueditor/net/upload/image/20160926/6361050831635160295248500.jpg");
@@ -160,22 +158,17 @@ public class MainActivity extends BaseToolBarActvity {
                     }
                 });
         //rxjava2
-        HttpMethods.getInstance().apiService
-                .getUsersBySign(str)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new ResultObserver(new HttpMethods.onRequestCallBack() {
-                    @Override
-                    public void onSuccess(String msg) {
 
-                        Log.e("accept",msg+"!!!!=");
-                    }
 
-                    @Override
-                    public void onError(String msg) {
+    }
 
-                    }
-                }));
+    @Override
+    public Context getContext() {
+        return this;
+    }
 
+    @Override
+    public String getDoctorId() {
+        return "19" ;
     }
 }

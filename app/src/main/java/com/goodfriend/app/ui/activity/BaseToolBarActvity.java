@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.goodfriend.R;
 
+import com.goodfriend.app.ui.presenter.BasePresenter;
 import com.goodfriend.app.utils.CommTool;
 import com.goodfriend.app.utils.SystemStatusManager;
 
@@ -23,7 +24,7 @@ import butterknife.ButterKnife;
  * Created by guoqiang on 2017/6/22.
  */
 
-public  abstract class BaseToolBarActvity extends BaseAppCompatActivity{
+public  abstract class BaseToolBarActvity<T extends BasePresenter> extends BaseAppCompatActivity{
     private FrameLayout baseContent;
     private Toolbar toolbar;
     private TextView toolbarTitleTv;
@@ -35,6 +36,10 @@ public  abstract class BaseToolBarActvity extends BaseAppCompatActivity{
         initControlViews();
         ButterKnife.bind(this);
         initView();
+        if(getmPresenter()!=null) {
+            getmPresenter().onCreate();
+            getmPresenter().loadData();
+        }
     }
     /**
      * 控件初始化操作
