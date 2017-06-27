@@ -171,4 +171,8 @@ public class MainActivity extends BaseToolBarActvity <SignDoctorPresenterImpl>im
     public String getDoctorId() {
         return "19" ;
     }
+    @Override
+    protected boolean isBackShow() {
+        return false;
+    }
 }

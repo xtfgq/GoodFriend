@@ -50,7 +50,7 @@ public  abstract class BaseToolBarActvity<T extends BasePresenter> extends BaseA
         toolbarTitleTv = (TextView) findViewById(R.id.toolbar_title_tv);
         //设置相关默认操作
         if (isBackShow()) {
-            setTitleNavigationIcon(R.mipmap.icon_title_back);
+            setTitleNavigationIcon(R.mipmap.icon_arrow_left);
         }
         setTitleBgColor(R.color.red);
         setInflateMenu();
@@ -209,7 +209,7 @@ public  abstract class BaseToolBarActvity<T extends BasePresenter> extends BaseA
     }
 
     protected boolean isBackShow() {
-        return false;
+        return true;
     }
 
     /**

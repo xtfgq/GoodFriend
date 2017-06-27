@@ -58,6 +58,8 @@ public class LoginActivity extends BaseActivity<BasePresenter> {
                 finish();
                 break;
             case R.id.tv_pwd:
+                startActivity(new Intent(LoginActivity.this,RxEventActivity.class));
+                finish();
                 break;
         }
     }

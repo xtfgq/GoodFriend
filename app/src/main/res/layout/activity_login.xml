@@ -84,6 +84,8 @@
                 android:text="登录"
                 android:textColor="@color/white"
                 android:textSize="36px"
+                android:paddingRight="15px"
+                android:paddingBottom="12px"
                 android:gravity="right"/>
             <View
                 android:layout_width="0dp"
@@ -95,6 +97,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:text="忘记密码"
+                android:paddingLeft="15px"
+                android:paddingBottom="12px"
                 android:textColor="@color/white"
                 android:textSize="36px"
                 android:gravity="left|center"/>
