@@ -29,6 +29,17 @@ public class IndexPersonFragmnet extends BaseFragment<SignDoctorPresenterImpl>
     public String getDoctorId() {
         return "19";
     }
+
+    @Override
+    public void onError(String e) {
+
+    }
+
+    @Override
+    public void onSuccess(String result) {
+
+    }
+
     public static IndexPersonFragmnet newInstance() {
         Bundle args = new Bundle();
 

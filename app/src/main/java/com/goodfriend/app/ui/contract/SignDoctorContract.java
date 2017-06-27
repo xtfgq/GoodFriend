@@ -10,6 +10,8 @@ import com.goodfriend.app.ui.view.BaseView;
 public class SignDoctorContract {
     public interface View extends BaseView{
         String getDoctorId();
+        void onError(String e);
+        void onSuccess(String result);
     }
 
     public interface Model {

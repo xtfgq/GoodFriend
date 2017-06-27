@@ -22,12 +22,12 @@ public class SignDoctorPresenterImpl extends BasePresenter<SignDoctorContract.Vi
 
     @Override
     public void onCreate() {
-        Log.e("onc","!!!!=");
+        Log.e("onc", "!!!!=");
     }
 
     @Override
     public void loadData() {
-        HashMap<String, String> map = new HashMap<String,String>();
+        HashMap<String, String> map = new HashMap<String, String>();
         map.put("DoctorID", mView.getDoctorId());
         HttpMethods.getInstance().apiService
                 .getUsersBySign(Node.getResult("MSUsersBySignDoctorInquiry", map))
@@ -37,12 +37,13 @@ public class SignDoctorPresenterImpl extends BasePresenter<SignDoctorContract.Vi
                     @Override
                     public void onSuccess(String msg) {
 
-                        Log.e("accept",msg+"!!!!=");
+                        Log.e("accept", msg + "!!!!=");
+                        mView.onSuccess(msg);
                     }
 
                     @Override
                     public void onError(String msg) {
-
+                        mView.onError(msg);
                     }
                 }));
     }

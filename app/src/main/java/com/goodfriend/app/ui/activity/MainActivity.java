@@ -195,6 +195,16 @@ public class MainActivity extends BaseToolBarActvity<SignDoctorPresenterImpl> im
     }
 
     @Override
+    public void onError(String e) {
+
+    }
+
+    @Override
+    public void onSuccess(String result) {
+
+    }
+
+    @Override
     protected boolean isBackShow() {
         return false;
     }
@@ -224,12 +234,7 @@ public class MainActivity extends BaseToolBarActvity<SignDoctorPresenterImpl> im
         builder.show();
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
-    }
+
 
     @OnClick({R.id.iv_reg, R.id.iv_code, R.id.iv_rule, R.id.iv_consult, R.id.iv_notice, R.id.iv_black})
     public void onViewClicked(View view) {
