@@ -22,6 +22,7 @@ import com.goodfriend.app.ui.dialog.KyDialogBuilder;
 import com.goodfriend.app.ui.presenter.BasePresenter;
 import com.goodfriend.app.ui.presenter.SignDoctorPresenterImpl;
 import com.goodfriend.app.ui.view.ImageCycleView;
+import com.goodfriend.app.ui.view.ProgressStateLayout;
 import com.goodfriend.app.utils.HttpMethods;
 import com.goodfriend.app.utils.Node;
 import com.goodfriend.app.utils.ScreenUtils;
@@ -197,6 +198,12 @@ public class MainActivity extends BaseToolBarActvity<SignDoctorPresenterImpl> im
     @Override
     public void onError(String e) {
 
+        getProgressStateLayout().showError(new ProgressStateLayout.ReloadListener() {
+            @Override
+            public void onClick() {
+                getmPresenter().loadData();
+            }
+        });
     }
 
     @Override
