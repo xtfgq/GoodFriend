@@ -26,6 +26,7 @@
         <activity android:name=".app.ui.activity.PostEventActivity" />
         <activity android:name=".app.ui.activity.RxEventActivity" />
         <activity android:name=".app.ui.activity.MainTabActivity" />
+
         <meta-data android:name="design_width" android:value="720"/>
         <meta-data android:name="design_height" android:value="1280"/>
     </application>

@@ -29,9 +29,6 @@ public  abstract class BaseToolBarActvity<T extends BasePresenter> extends BaseA
     private FrameLayout baseContent;
     private Toolbar toolbar;
     private TextView toolbarTitleTv;
-
-
-
     private ProgressStateLayout progressStateLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +57,6 @@ public  abstract class BaseToolBarActvity<T extends BasePresenter> extends BaseA
         setTitleBgColor(R.color.red);
         setInflateMenu();
         baseContent.addView(LinearLayout.inflate(this, getContentViewID(), null));
-
         //左边Navigation Button监听回调
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
