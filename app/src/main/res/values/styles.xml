@@ -15,4 +15,15 @@
     <style name="AppTheme.Launcher" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowBackground">@color/white</item>
     </style>
+    <style name="home_tab">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">28px</item>
+        <item name="android:paddingTop">16px</item>
+        <item name="android:paddingBottom">8px</item>
+
+        <item name="android:button">@null</item>
+    </style>
 </resources>

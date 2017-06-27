@@ -56,7 +56,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="24px"
             android:orientation="horizontal">
 
             <LinearLayout
@@ -68,13 +68,14 @@
 
                 <ImageView
                     android:id="@+id/iv_reg"
-                    android:layout_width="56dp"
-                    android:layout_height="56dp"
+                    android:layout_width="110px"
+                    android:layout_height="110px"
                     android:layout_gravity="center_horizontal"
                     android:layout_weight="1"
+                    android:clickable="true"
                     android:background="@mipmap/icon_record"
                     android:gravity="center"
-                    android:textSize="14sp" />
+                    />
 
                 <TextView
                     android:id="@+id/tv_reg"
@@ -97,8 +98,8 @@
 
                 <ImageView
                     android:id="@+id/iv_code"
-                    android:layout_width="56dp"
-                    android:layout_height="56dp"
+                    android:layout_width="110px"
+                    android:layout_height="110px"
                     android:layout_gravity="center_horizontal"
 
                     android:layout_weight="1"
@@ -106,7 +107,7 @@
                     android:background="@mipmap/icon_record"
                     android:gravity="center"
 
-                    android:textSize="14sp" />
+                   />
 
                 <TextView
                     android:id="@+id/tv_code"
@@ -129,17 +130,13 @@
 
                 <ImageView
                     android:id="@+id/iv_rule"
-                    android:layout_width="56dp"
-                    android:layout_height="56dp"
+                    android:layout_width="110px"
+                    android:layout_height="110px"
                     android:layout_gravity="center_horizontal"
-
                     android:layout_weight="1"
                     android:background="@mipmap/icon_record"
-
                     android:gravity="center"
-
-
-                    android:textSize="14sp" />
+                    />
 
                 <TextView
                     android:id="@+id/tv_rule"
@@ -159,11 +156,9 @@
         <LinearLayout
 
             android:id="@+id/lltwo"
-
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-
+            android:layout_marginTop="30px"
             android:orientation="horizontal">
 
             <LinearLayout
@@ -174,17 +169,13 @@
 
                 <ImageView
                     android:id="@+id/iv_consult"
-                    android:layout_width="56dp"
-                    android:layout_height="56dp"
+                    android:layout_width="110px"
+                    android:layout_height="110px"
                     android:layout_gravity="center_horizontal"
-
                     android:layout_weight="1"
                     android:background="@mipmap/icon_record"
-
                     android:gravity="center"
-
-
-                    android:textSize="28px" />
+                    />
 
                 <TextView
                     android:id="@+id/tv_consult"
@@ -195,7 +186,7 @@
                     android:gravity="center"
                     android:text="政策咨询"
                     android:textColor="@color/red"
-                    android:textSize="14sp" />
+                    android:textSize="28px" />
             </LinearLayout>
 
             <LinearLayout
@@ -208,8 +199,8 @@
 
                 <ImageView
                     android:id="@+id/iv_notice"
-                    android:layout_width="56dp"
-                    android:layout_height="56dp"
+                    android:layout_width="110px"
+                    android:layout_height="110px"
                     android:layout_gravity="center_horizontal"
                     android:layout_weight="1"
                     android:background="@mipmap/icon_record"
@@ -238,8 +229,8 @@
 
                 <ImageView
                     android:id="@+id/iv_black"
-                    android:layout_width="56dp"
-                    android:layout_height="56dp"
+                    android:layout_width="110px"
+                    android:layout_height="110px"
                     android:layout_gravity="center_horizontal"
                     android:layout_weight="1"
                     android:background="@mipmap/icon_record"

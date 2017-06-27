@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">良友排号</string>
+
+    <string name="tab_home">首页</string>
+    <string name="tab_live">直播</string>
+    <string name="tab_follw">关注</string>
+    <string name="tab_me">我的</string>
+
+    <string name="tv_home">首页</string>
+    <string name="tv_health">记录</string>
+    <string name="tv_doctor">问医</string>
+    <string name="tv_msg">消息</string>
+    <string name="tv_info">我的</string>
+
 </resources>

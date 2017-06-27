@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:orientation="vertical">
+
+    <!-- 普通底部导航 -->
+
+    <LinearLayout
+        android:id="@+id/main_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/bottom_menu_text_size"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/layout_home"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onTabClicked">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/image_home"
+                    android:layout_width="40px"
+                    android:layout_height="40px"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/white"
+                    android:focusable="false"
+                    android:scaleType="centerInside"
+                    android:src="@mipmap/icon_home_pressed" />
+
+                <TextView
+                    android:id="@+id/tv_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/image_home"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/tv_home"
+                    android:textColor="@color/actionbar_color"
+                    android:textSize="24px" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_health"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onTabClicked">
+
+            <RelativeLayout
+                android:layout_width="120px"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/img_health"
+                    android:layout_width="40px"
+                    android:layout_height="40px"
+                    android:layout_centerHorizontal="true"
+
+                    android:focusable="false"
+                    android:scaleType="centerInside"
+                    android:src="@mipmap/icon_jiankang_normal" />
+
+                <TextView
+                    android:id="@+id/tv_health"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/img_health"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/tv_health"
+                    android:textColor="@color/bottom_text_color_normal"
+                    android:textSize="24px" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_private_doctor"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onTabClicked">
+
+            <RelativeLayout
+                android:layout_width="120px"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/img_private_doctor"
+                    android:layout_width="40px"
+                    android:layout_height="40px"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/white"
+                    android:focusable="false"
+                    android:scaleType="centerInside"
+                    android:src="@mipmap/icon_private_doctor_normal" />
+
+                <TextView
+                    android:id="@+id/tv_private_doctor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/img_private_doctor"
+                    android:layout_centerHorizontal="true"
+                    android:text="家庭医生"
+                    android:textColor="@color/bottom_text_color_normal"
+                    android:textSize="24px" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_doctor"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onTabClicked">
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"
+                >
+                <RelativeLayout
+                    android:layout_width="100px"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center">
+
+
+                    <RelativeLayout
+                        android:id="@+id/rl_doctor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true">
+
+                        <FrameLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/img_doctor"
+                                android:layout_width="40px"
+                                android:layout_height="40px"
+                                android:layout_gravity="center"
+
+                                android:focusable="false"
+                                android:scaleType="centerInside"
+                                android:src="@mipmap/icon_msg_normal" />
+                        </FrameLayout>
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/tv_doctor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rl_doctor"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/tv_msg"
+
+                        android:textColor="@color/bottom_text_color_normal"
+                        android:textSize="12sp" />
+
+                </RelativeLayout>
+                <TextView
+                    android:id="@+id/tv_dot"
+                    android:layout_width="32px"
+                    android:layout_height="32px"
+                    android:background="@mipmap/icon_online"
+                    android:text="10"
+                    android:layout_marginRight="6dp"
+                    android:layout_marginTop="2dp"
+
+                    android:textColor="@color/white"
+                    android:textSize="8sp"
+                    android:gravity="center"
+                    android:layout_gravity="right|top"
+                    android:visibility="gone" />
+            </FrameLayout>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/layout_info"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onTabClicked">
+
+            <RelativeLayout
+                android:layout_width="120px"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/img_info"
+                    android:layout_width="40px"
+                    android:layout_height="40px"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/white"
+                    android:focusable="false"
+                    android:scaleType="centerInside"
+                    android:src="@mipmap/icon_myinfo_normal" />
+
+                <TextView
+                    android:id="@+id/tv_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/img_info"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/tv_info"
+                    android:textColor="@color/bottom_text_color_normal"
+                    android:textSize="24px" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

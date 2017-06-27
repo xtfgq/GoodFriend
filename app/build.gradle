@@ -46,7 +46,7 @@ dependencies {
     compile 'com.squareup.okhttp3:logging-interceptor:3.6.0'
     //rx权限请求库
     compile 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.3@aar'
-
-    testCompile 'junit:junit:4.12'
+    compile 'com.supercwn.superrecycleview:superlibrary:1.2.0'
+   testCompile 'junit:junit:4.12'
     compile project(path: ':autolayout')
 }

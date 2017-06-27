@@ -11,6 +11,14 @@
     <color name="actionbar_color">#00c07d</color>
 
     <color name="transparent">#00000000</color>
-
+    <color name="line_bg">#e5e5e5</color>
     <color name="white">#ffffff</color>
+
+    <color name="tab_text_color_normal">#A7A7A7</color>
+    <color name="tab_text_color_selected">#FB5553</color>
+
+    <color name="title_bg_color">#fafafa</color>
+    <color name="colorline">#d9d9d9</color>
+
+    <color name="bottom_text_color_normal">#c8c8c8</color>
 </resources>
