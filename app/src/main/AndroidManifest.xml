@@ -25,6 +25,7 @@
         <!--rxbusdemo-->
         <activity android:name=".app.ui.activity.PostEventActivity" />
         <activity android:name=".app.ui.activity.RxEventActivity" />
+        //recyviewdemo
         <activity android:name=".app.ui.activity.MainTabActivity" />
 
         <meta-data android:name="design_width" android:value="720"/>

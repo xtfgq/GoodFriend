@@ -32,7 +32,6 @@ public class IndexPersonFragmnet extends BaseFragment<ShowAdsPresenterImpl>
         implements ShowAdsContract.View, SuperRecyclerView.LoadingListener {
     @BindView(R.id.super_recycle_view)
     SuperRecyclerView superRecyclerView;
-    Unbinder unbinder;
 
     private int page = 1;
     private RefreshAndLoadMoreAdapter mAdapter;
@@ -109,13 +108,6 @@ public class IndexPersonFragmnet extends BaseFragment<ShowAdsPresenterImpl>
     @Override
     protected void initDo() {
         page = 1;
-    }
-
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        unbinder.unbind();
     }
 
     @Override

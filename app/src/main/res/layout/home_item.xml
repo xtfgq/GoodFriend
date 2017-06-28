@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="160px"
+    android:layout_height="180px"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <LinearLayout
@@ -9,15 +10,16 @@
         android:layout_height="158px"
         android:orientation="horizontal">
 
-        <ImageView
+        <com.sunfusheng.glideimageview.GlideImageView
             android:id="@+id/iv_head"
             android:layout_width="156px"
             android:layout_height="104px"
             android:layout_gravity="center"
-            android:scaleType="fitXY"
+            android:scaleType="centerCrop"
             android:layout_marginLeft="20px"
             android:src="@drawable/pic_defaultads"
-            android:layout_marginRight="16px" />
+            android:layout_marginRight="16px"
+           />
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="148px"

@@ -11,6 +11,7 @@ import com.goodfriend.app.common.Constants;
 
 import com.goodfriend.app.ui.model.News;
 import com.goodfriend.app.utils.DateUtils;
+import com.sunfusheng.glideimageview.GlideImageView;
 import com.superrecycleview.superlibrary.adapter.BaseViewHolder;
 import com.superrecycleview.superlibrary.adapter.SuperBaseAdapter;
 
@@ -59,10 +60,17 @@ public class RefreshAndLoadMoreAdapter extends SuperBaseAdapter<News> {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        String url=Constants.BASE_URL + item.getPic().replace("~", "").replace("\\", "/");
-        Glide.with(mContext)
-                .load(Constants.BASE_URL + item.getPic().replace("~", "").replace("\\", "/"))
-                .into((ImageView) holder.getView(R.id.iv_head));
+        GlideImageView imageView=(GlideImageView)holder.getView(R.id.iv_head);
+        imageView.setRadius(10);
+        imageView.setBorderWidth(3);
+        imageView.setBorderColor(R.color.white);
+        imageView.setPressedAlpha(0.3f);
+        imageView.setPressedColor(R.color.white);
+        imageView.loadImage(Constants.BASE_URL + item.getPic().replace("~", "").replace("\\", "/"),
+                R.color.placeholder_color);
+//        Glide.with(mContext)
+//                .load(Constants.BASE_URL + item.getPic().replace("~", "").replace("\\", "/"))
+//                .into((ImageView) holder.getView(R.id.iv_head));
 
     }
 
