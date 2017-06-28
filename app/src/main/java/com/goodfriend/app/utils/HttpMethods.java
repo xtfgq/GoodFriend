@@ -3,6 +3,7 @@ package com.goodfriend.app.utils;
 
 
 import com.goodfriend.app.common.ApiService;
+import com.goodfriend.app.common.Constants;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
 import org.simpleframework.xml.Serializer;
@@ -35,7 +36,7 @@ import retrofit2.converter.simplexml.SimpleXmlConverterFactory;
 
 public class HttpMethods {
 
-    private static final String BASE_URL = "http://ehome.staging.topmd.cn:81/";
+
     private static final int TIME_OUT=10;
     private static final int READ_TIMEOUT = 20;
     private static final int WRITE_TIMEOUT = 10;
@@ -54,7 +55,7 @@ public class HttpMethods {
         Strategy strategy = new AnnotationStrategy();
         Serializer serializer = new Persister(strategy);
         retrofit = new Retrofit.Builder()
-                .baseUrl(BASE_URL)
+                .baseUrl(Constants.BASE_URL)
                 .addConverterFactory(ScalarsConverterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .addConverterFactory(SimpleXmlConverterFactory.create(serializer))
@@ -73,13 +74,7 @@ public class HttpMethods {
         return sinalInstance.instance;
     }
 
-    public void getUsersBySign(Observer<ResponseBody> observer, String str){
 
-        apiService.getUsersBySign(str).subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(observer);;
-
-    }
     public interface onRequestCallBack{
         void onSuccess(String msg);
         void onError(String msg);

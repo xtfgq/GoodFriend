@@ -21,12 +21,23 @@ import android.view.Window;
 import com.goodfriend.app.ui.activity.BaseToolBarActvity;
 import com.goodfriend.app.ui.presenter.BasePresenter;
 import com.goodfriend.app.ui.view.IBaseFragmentView;
+
+import butterknife.ButterKnife;
+
 /**
  * Created by guoqiang on 2017/6/27.
  */
 
 public abstract class BaseFragment<T extends BasePresenter> extends Fragment implements
         IBaseFragmentView {
+    public T getmPresenter() {
+        return mPresenter;
+    }
+
+    public void setmPresenter(T mPresenter) {
+        this.mPresenter = mPresenter;
+    }
+
     protected T mPresenter;
     protected Context mContext;
     protected Bundle mBundle;
@@ -80,6 +91,7 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment imp
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         mContentView = initView(inflater, savedInstanceState);
+        ButterKnife.bind(this, mContentView);
         return mContentView;
     }
     /**
@@ -132,6 +144,7 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment imp
             return;
         }
         if (isVisibleToUser) {
+            initDo();
             //相当于Fragment的onResume
             mPresenter.loadData();
         }
@@ -142,6 +155,7 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment imp
         mPresenter.onDestroy();
         super.onDestroyView();
     }
+    protected abstract void initDo();
 
     @Override
     public void onDetach() {

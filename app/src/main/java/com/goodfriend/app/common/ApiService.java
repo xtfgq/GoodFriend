@@ -19,4 +19,10 @@ public interface ApiService {
     })
     @POST("WebServices/EhomeWebservice.asmx")
     Observable<ResponseBody> getUsersBySign(@retrofit2.http.Body String str);
+    @Headers({
+            "Content-Type: text/xml; charset=utf-8",
+            "SOAPAction: http://tempuri.org/NewsInquiry"
+    })
+    @POST("WebServices/EhomeWebservice.asmx")
+    Observable<ResponseBody> getNewsInquiry(@retrofit2.http.Body String str);
 }
