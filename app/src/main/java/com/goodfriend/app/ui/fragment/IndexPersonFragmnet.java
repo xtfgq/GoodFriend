@@ -73,7 +73,7 @@ public class IndexPersonFragmnet extends BaseFragment<ShowAdsPresenterImpl>
 
     @Override
     public void onSuccess(String result) {
-        if(result.contains("MessageCode")){
+        if(result.contains("MessageCode")&&page>1){
             superRecyclerView.setNoMore(true);
         }else {
             NewsDate date = JsonTools.getData(result.toString(), NewsDate.class);

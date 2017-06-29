@@ -17,7 +17,7 @@
             android:layout_gravity="center"
             android:scaleType="centerCrop"
             android:layout_marginLeft="20px"
-            android:src="@drawable/pic_defaultads"
+
             android:layout_marginRight="16px"
            />
         <RelativeLayout
