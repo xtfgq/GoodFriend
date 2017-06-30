@@ -190,13 +190,13 @@ public class ProgressStateLayout extends RelativeLayout {
         }
     }
 
-    private void hideEmptyView() {
+    public void hideEmptyView() {
         if (viewEmpty != null) {
             viewEmpty.setVisibility(View.GONE);
         }
     }
 
-    private void hideErrorView() {
+    public void hideErrorView() {
         if (viewError != null) {
             viewError.setVisibility(View.GONE);
         }

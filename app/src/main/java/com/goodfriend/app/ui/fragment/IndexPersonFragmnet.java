@@ -13,6 +13,7 @@ import com.goodfriend.app.ui.contract.ShowAdsContract;
 import com.goodfriend.app.ui.model.News;
 import com.goodfriend.app.ui.model.NewsDate;
 import com.goodfriend.app.ui.presenter.ShowAdsPresenterImpl;
+import com.goodfriend.app.ui.view.ProgressStateLayout;
 import com.goodfriend.app.utils.JsonTools;
 import com.superrecycleview.superlibrary.recycleview.ProgressStyle;
 import com.superrecycleview.superlibrary.recycleview.SuperRecyclerView;
@@ -68,7 +69,14 @@ public class IndexPersonFragmnet extends BaseFragment<ShowAdsPresenterImpl>
 
     @Override
     public void onError(String e) {
+        getProgressStateLayout().showError(new ProgressStateLayout.ReloadListener() {
+            @Override
+            public void onClick() {
+                page=1;
+                getmPresenter().loadData();
 
+            }
+        });
     }
 
     @Override
@@ -76,12 +84,14 @@ public class IndexPersonFragmnet extends BaseFragment<ShowAdsPresenterImpl>
         if(result.contains("MessageCode")&&page>1){
             superRecyclerView.setNoMore(true);
         }else {
+
             NewsDate date = JsonTools.getData(result.toString(), NewsDate.class);
             List<News> list = date.getData();
             if (page == 1) dataList.clear();
             for (News n : list) {
                 dataList.add(n);
             }
+            getProgressStateLayout().showContent();
             mAdapter.setmList(dataList);
             mAdapter.notifyDataSetChanged();
             if (page == 1) {

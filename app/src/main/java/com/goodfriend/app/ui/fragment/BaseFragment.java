@@ -21,6 +21,7 @@ import android.view.Window;
 import com.goodfriend.app.ui.activity.BaseToolBarActvity;
 import com.goodfriend.app.ui.presenter.BasePresenter;
 import com.goodfriend.app.ui.view.IBaseFragmentView;
+import com.goodfriend.app.ui.view.ProgressStateLayout;
 
 import butterknife.ButterKnife;
 
@@ -222,5 +223,8 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment imp
     public Window getWindow() {
         return getActivity() == null ? ((BaseToolBarActvity) mContext).getWindow() :
                 getActivity().getWindow();
+    }
+    public ProgressStateLayout getProgressStateLayout(){
+        return ((BaseToolBarActvity) mContext).getProgressStateLayout();
     }
 }

@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.goodfriend.R;
 import com.goodfriend.app.ui.presenter.BasePresenter;
+import com.goodfriend.app.utils.ToastUitl;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -44,7 +45,7 @@ public class LoginActivity extends BaseActivity<BasePresenter> {
 
     @Override
     public void initView() {
-
+        ToastUitl.showToastWithImg(getText(R.string.net_error).toString(),R.mipmap.ic_wifi_off);
     }
 
 

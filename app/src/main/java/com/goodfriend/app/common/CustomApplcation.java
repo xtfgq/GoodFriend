@@ -26,7 +26,11 @@ public class CustomApplcation extends Application{
     public void addActivity(Activity activity) {
         mList.add(activity);
     }
-
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        mInstance = this;
+    }
     /**
      * 结束指定的Activity
      */

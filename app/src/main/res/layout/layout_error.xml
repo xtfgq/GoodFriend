@@ -14,7 +14,7 @@
             android:layout_height="96dp"
             android:layout_width="96dp"
             android:layout_gravity="center"
-            android:src="@mipmap/icon_error"
+            android:src="@mipmap/ic_wifi_off"
             />
         <TextView
             android:id="@+id/tv_title"

@@ -36,16 +36,16 @@ public class MainTabActivity extends BaseToolBarActvity {
     @Override
     public void initView() {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-//        if(mIndexPersonFragmnet == null){
-//            mIndexPersonFragmnet = IndexPersonFragmnet.newInstance();
-//            fragmentTransaction.add(R.id.fragmentContent,mIndexPersonFragmnet);
-//        }
-//        fragmentTransaction.show(mIndexPersonFragmnet);
-        if(mOneFragment == null){
-            mOneFragment = OneFragment.newInstance();
-            fragmentTransaction.add(R.id.fragmentContent,mOneFragment);
+        if(mIndexPersonFragmnet == null){
+            mIndexPersonFragmnet = IndexPersonFragmnet.newInstance();
+            fragmentTransaction.add(R.id.fragmentContent,mIndexPersonFragmnet);
         }
-        fragmentTransaction.show(mOneFragment);
+        fragmentTransaction.show(mIndexPersonFragmnet);
+//        if(mOneFragment == null){
+//            mOneFragment = OneFragment.newInstance();
+//            fragmentTransaction.add(R.id.fragmentContent,mOneFragment);
+//        }
+//        fragmentTransaction.show(mOneFragment);
         fragmentTransaction.commit();
     }
 
