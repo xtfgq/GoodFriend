@@ -29,7 +29,7 @@ public  abstract class BaseToolBarActvity<T extends BasePresenter> extends BaseA
     private FrameLayout baseContent;
     private Toolbar toolbar;
     private TextView toolbarTitleTv;
-    private ProgressStateLayout progressStateLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,7 +49,7 @@ public  abstract class BaseToolBarActvity<T extends BasePresenter> extends BaseA
         baseContent = (FrameLayout) findViewById(R.id.base_content);
         toolbar = (Toolbar) findViewById(R.id.tool_bar);
         toolbarTitleTv = (TextView) findViewById(R.id.toolbar_title_tv);
-        progressStateLayout=(ProgressStateLayout)findViewById(R.id.progressStateLayout);
+
         //设置相关默认操作
         if (isBackShow()) {
             setTitleNavigationIcon(R.mipmap.icon_arrow_left);
@@ -223,7 +223,5 @@ public  abstract class BaseToolBarActvity<T extends BasePresenter> extends BaseA
 
 
     public abstract void initView();
-    public ProgressStateLayout getProgressStateLayout() {
-        return progressStateLayout;
-    }
+
 }

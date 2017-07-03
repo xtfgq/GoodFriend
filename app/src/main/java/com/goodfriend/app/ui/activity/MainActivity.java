@@ -198,12 +198,7 @@ public class MainActivity extends BaseToolBarActvity<SignDoctorPresenterImpl> im
     @Override
     public void onError(String e) {
 
-        getProgressStateLayout().showError(new ProgressStateLayout.ReloadListener() {
-            @Override
-            public void onClick() {
-                getmPresenter().loadData();
-            }
-        });
+
     }
 
     @Override

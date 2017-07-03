@@ -224,7 +224,5 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment imp
         return getActivity() == null ? ((BaseToolBarActvity) mContext).getWindow() :
                 getActivity().getWindow();
     }
-    public ProgressStateLayout getProgressStateLayout(){
-        return ((BaseToolBarActvity) mContext).getProgressStateLayout();
-    }
+
 }

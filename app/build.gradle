@@ -51,6 +51,8 @@ dependencies {
     //rx权限请求库
     compile 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.3@aar'
     compile 'com.supercwn.superrecycleview:superlibrary:1.2.0'
+    //沉浸式类库
+    compile 'com.gyf.barlibrary:barlibrary:2.2.5'
     testCompile 'junit:junit:4.12'
     compile project(path: ':autolayout')
 }
